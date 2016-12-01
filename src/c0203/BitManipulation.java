@@ -1,4 +1,4 @@
-package ch02;
+package c0203;
 
 import java.util.Random;
 

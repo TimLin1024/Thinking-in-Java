@@ -1,4 +1,4 @@
-package ch02;
+package c0203;
 
 public class Literals {
 	char c = 0xffff;

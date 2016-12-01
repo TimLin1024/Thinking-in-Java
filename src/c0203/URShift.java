@@ -1,4 +1,4 @@
-package ch02;
+package c0203;
 
 public class URShift {
 	public static void main(String[] args) {

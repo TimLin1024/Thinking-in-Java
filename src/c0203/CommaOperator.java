@@ -1,4 +1,4 @@
-package ch02;
+package c0203;
 
 public class CommaOperator {
 	public static void main(String[] args) {

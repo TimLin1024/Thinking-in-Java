@@ -1,4 +1,4 @@
-package ch02;
+package c0203;
 
 import java.io.InputStreamReader;
 import java.util.Arrays;

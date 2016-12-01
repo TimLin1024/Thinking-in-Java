@@ -1,4 +1,4 @@
-package ch02;
+package c0203;
 
 public class LabelFor {
 	public static void main(String[] args) {

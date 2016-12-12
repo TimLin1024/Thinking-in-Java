@@ -1,6 +1,8 @@
 package c21thread;
 
 import java.util.Arrays;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Pratice2Fibonacci implements Runnable{
 	
@@ -16,6 +18,7 @@ public class Pratice2Fibonacci implements Runnable{
 		for (int i = 2; i < ary.length; i++) {
 			ary[i] = ary[i-1] + ary[i-2];
 		}
+		
 		return ary;
 	}
 	@Override
@@ -23,8 +26,12 @@ public class Pratice2Fibonacci implements Runnable{
 		System.out.println("Fibonacci array"+ num +" "+ Arrays.toString(generateFibonacci(num)) );
 	}
 	public static void main(String[] args) {
+		ExecutorService executorService = Executors.newSingleThreadExecutor();
 		for (int i = 3; i < 10; i++) {
-			new Thread(new Pratice2Fibonacci(i)).start();
+//			new Thread(new Pratice2Fibonacci(i)).start();
+			executorService.execute(new Pratice2Fibonacci(i));
 		}
+		executorService.shutdown();
+		
 	}
 }

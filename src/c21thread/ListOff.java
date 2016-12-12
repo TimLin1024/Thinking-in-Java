@@ -12,7 +12,7 @@ public class ListOff implements Runnable {
 		this.countDown = countDown;
 	}
 	
-	private String status(){
+	protected String status(){
 		return "#" + id + "(" +( countDown > 0? countDown : "ListOff!") + ").";
 	}
 	

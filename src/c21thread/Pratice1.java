@@ -1,5 +1,8 @@
 package c21thread;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class Pratice1 implements Runnable{
 	
 	final int id;
@@ -11,15 +14,18 @@ public class Pratice1 implements Runnable{
 	@Override
 	public void run() {
 		for (int i = 0; i < 3; i++) {
-			System.out.println("pratice1");
+			System.out.println(id+" pratice1.run() " + i);
 			Thread.yield();
 		}
 		System.out.println("Task"+ id + " Finish");
 	}
 	
 	public static void main(String[] args) {
-		for (int i = 0; i < 10; i++) {
-			new Thread(new Pratice1(i)).start();
+		ExecutorService executorService = Executors.newCachedThreadPool();
+		for (int i = 0; i < 18; i++) {
+//			new Thread(new Pratice1(i)).start();
+			executorService.execute(new Pratice1(i));
 		}
+		executorService.shutdown();
 	}
 }
